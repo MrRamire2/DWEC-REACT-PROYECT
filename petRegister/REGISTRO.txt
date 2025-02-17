@@ -1,0 +1,1 @@
+13/02/2025: Creación de documentos necesarios, la base de datos en FIREBASE, me he documentado sobre su aplicación y planeación del proyecto
