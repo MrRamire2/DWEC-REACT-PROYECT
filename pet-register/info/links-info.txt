@@ -1,0 +1,3 @@
+Firebase Realtime Database y Firebase Hosting en una app React con Next.js:
+https://medium.com/@injuli/integraci%C3%B3n-de-firebase-realtime-database-en-una-aplicaci%C3%B3n-react-con-next-js-4c377980f434
+

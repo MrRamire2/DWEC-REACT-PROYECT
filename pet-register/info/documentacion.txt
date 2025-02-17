@@ -1,0 +1,9 @@
+Introducción:
+
+Instalación y configuración:
+
+Estructura del código:
+
+Funciones implementadas:
+
+Mejoras y futuras implementaciones:
