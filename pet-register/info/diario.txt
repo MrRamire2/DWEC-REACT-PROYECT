@@ -4,6 +4,12 @@ Tareas realizadas en cada sesión de trabajo:
 Creación de proyecto en github, base de datos en firestore y proyecto.
 Creación de carpetas necesarias.
 Aprendiendo uso de Firebase en React.
+
+21/02/2025:
+Creación de archivo Firebase.
+Creación de navbar.
+Creación de página de inicio.
+Creación de formulario.
  
 
 
