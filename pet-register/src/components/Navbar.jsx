@@ -5,6 +5,7 @@ function Navbar() {
   return (
     <nav>
       <Link to="/">Inicio</Link>
+      {/* <Link to="/listado">Mascotas</Link> */}
       <Link to="/nuevo">Agregar Mascota</Link>
     </nav>
   );

@@ -2,26 +2,48 @@ form {
   display: flex;
   flex-direction: column;
   width: 300px;
-  margin: 2rem auto;
-  padding: 1rem;
+  margin: 30px auto;
+  padding: 15px;
   border: 1px solid #ff7300;
   border-radius: 8px;
   background-color: #ffda77;
 }
 
 form input {
-  margin-bottom: 1rem;
-  padding: 0.8rem;
-  font-size: 1rem;
-  font-weight: bold;
+  margin-bottom: 15px;
+  padding: 15px;
+  font-size: 15px;
   border-radius: 4px;
   color: #383838;
   border: 1px solid #ff7300;
   background-color: #fbf6f0;
 }
 
+form input:hover{
+  box-shadow: 0px 0px 8px #ff7300;
+}
+
+form input:focus, form input:active{
+  box-shadow: 0px 0px 8px #ff7300;
+  outline: none;
+  border: none;
+}
+
+input[type="file"]::file-selector-button{
+ color: #fbf6f0;
+ background-color: #ff7300;
+ border-radius: 5px;
+ border: 0;
+ padding: 10px;
+ font-size: small;
+}
+
+input[type="file"]::file-selector-button:hover{
+  background-color: #ffa01b;
+ }
+
 form button {
-  padding: 0.8rem;
+  padding: 15px;
   background-color: #ff7300;
   color: #fbf6f0;
   border: none;

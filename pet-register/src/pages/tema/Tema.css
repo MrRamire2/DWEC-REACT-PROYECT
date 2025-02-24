@@ -5,9 +5,11 @@ section {
   background-color: #ffa01b;
   height: 300px;
   width: 100%;
+  max-width: 600px;
   margin: 20px;
   padding: 20px;
   border-radius: 10px;
+  border: solid 3px #ff7300;
 }
 
 section div:first-child{
@@ -24,6 +26,17 @@ section div:first-child h2{
   margin: 0;
 }
 
+section div:first-child button{
+  background-color: #ff7300;
+  border: 3px solid #ffa01b;
+}
+
+section div:first-child button:hover{
+  background-color: #ffa01b;
+  border: 3px solid #ff7300;
+  box-sizing: border-box;
+}
+
 section div:first-child div h3{
   display: inline-block;
 }
@@ -32,6 +45,9 @@ section div:last-child{
   height: 300px;
   width: 300px;
   overflow: hidden;
+  border-radius: 15px;
+  border: solid 3px #ff7300;
+  box-sizing: border-box;
 }
 
 section div img{
