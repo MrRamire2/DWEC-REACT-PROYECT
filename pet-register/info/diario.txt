@@ -10,9 +10,17 @@ Creación de archivo Firebase.
 Creación de navbar.
 Creación de página de inicio.
 Creación de formulario.
- 
+Conexión con Firebase.
+Adición de estilos
 
-
+23/02/2025 && 24/02/2025:
+Mejorar formulario
+Permitir guardar la imagen el base64
+Creación de EliminarMascotas
+Creación de list
+Creación de Tema
+Edición de inicio
+Adición de estilos
 
 
  -----------------------------------------------------------------
