@@ -22,6 +22,10 @@ Creación de Tema
 Edición de inicio
 Adición de estilos
 
+27/02/2025:
+Adición de estilos
+Añadiendo datos al firebase
+
 
  -----------------------------------------------------------------
 Problemas encontrados y soluciones aplicadas:
