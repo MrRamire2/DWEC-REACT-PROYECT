@@ -22,3 +22,26 @@ nav a {
 nav a:hover {
   color: #383838;
 }
+
+nav form{
+  display: flex;
+  justify-content: center;
+}
+
+nav input{
+  height: 40px;
+  margin: 0 10px;
+  width: 270px;
+  padding: 0 10px;
+  color: #fbf6f0;
+}
+
+nav button, nav input{
+  background-color: #ffa01b;
+  border: solid 2px #ff7300;
+  border-radius: 5px;
+}
+
+nav button:hover, nav input:hover{
+  border: solid 2px #fbf6f0;
+}

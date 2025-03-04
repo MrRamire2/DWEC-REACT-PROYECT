@@ -1,17 +1,42 @@
-import { useState, useRef } from 'react';
-import { db } from '../../firebase/firebase';
-import { collection, addDoc } from 'firebase/firestore';
-import './Formulario.css';
+import { useState, useEffect, useRef } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { db } from "../../firebase/firebase";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import '../formulario/Formulario.css';
+import './EditarMascota.css';
 
-function Formulario() {
+function EditarMascota() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const fileInputRef = useRef(null);
+
   const [nombre, setNombre] = useState("");
   const [tipo, setTipo] = useState("");
   const [raza, setRaza] = useState("");
-  const [imagen, setImagen] = useState(null);
+  const [imagen, setImagen] = useState("");
   const [personalidad, setPersonalidad] = useState([]);
   const [enfermedades, setEnfermedades] = useState([]);
   const [vacunas, setVacunas] = useState([]);
-  const fileInputRef = useRef(null);
+
+  useEffect(() => {
+    const fetchMascota = async () => {
+      const docRef = doc(db, "mascotas", id);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const mascota = docSnap.data();
+        setNombre(mascota.nombre);
+        setTipo(mascota.tipo);
+        setRaza(mascota.raza);
+        setImagen(mascota.imagen);
+        setPersonalidad(mascota.personalidad || []);
+        setEnfermedades(mascota.enfermedades || []);
+        setVacunas(mascota.vacunas || []);
+      } else {
+        console.log("No existe el documento");
+      }
+    };
+    fetchMascota();
+  }, [id]);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -31,14 +56,9 @@ function Formulario() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!imagen) {
-      alert("Por favor, selecciona una imagen.");
-      return;
-    }
-
+    const mascotaRef = doc(db, "mascotas", id);
     try {
-      await addDoc(collection(db, "mascotas"), {
+      await updateDoc(mascotaRef, {
         nombre,
         tipo,
         raza,
@@ -47,27 +67,16 @@ function Formulario() {
         enfermedades,
         vacunas,
       });
-      alert("Mascota agregada correctamente.");
-      setNombre("");
-      setTipo("");
-      setRaza("");
-      setImagen(null);
-      setPersonalidad([]);
-      setEnfermedades([]);
-      setVacunas([]);
-
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
-
+      alert("Mascota actualizada correctamente.");
+      navigate(`/`);
     } catch (error) {
-      console.error("Error al agregar la mascota: ", error);
-      alert("Hubo un error al agregar la mascota.");
+      console.error("Error al actualizar la mascota", error);
+      alert("Hubo un error al actualizar la mascota.");
     }
   };
 
   return (
-    <form className='form-reg' onSubmit={handleSubmit}>
+    <form className="form-reg" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Nombre"
@@ -88,7 +97,11 @@ function Formulario() {
       />
 
       <label>Personalidad:</label>
-      <select multiple onChange={(e) => handleMultiSelect(e, setPersonalidad)}>
+      <select
+        multiple
+        value={personalidad}
+        onChange={(e) => handleMultiSelect(e, setPersonalidad)}
+      >
         <option value="Juguetón">Juguetón</option>
         <option value="Tranquilo">Tranquilo</option>
         <option value="Cariñoso">Cariñoso</option>
@@ -97,7 +110,11 @@ function Formulario() {
       </select>
 
       <label>Enfermedades:</label>
-      <select multiple onChange={(e) => handleMultiSelect(e, setEnfermedades)}>
+      <select
+        multiple
+        value={enfermedades}
+        onChange={(e) => handleMultiSelect(e, setEnfermedades)}
+      >
         <option value="Ninguna">Ninguna</option>
         <option value="Alergias">Alergias</option>
         <option value="Problemas cardíacos">Problemas cardíacos</option>
@@ -106,7 +123,11 @@ function Formulario() {
       </select>
 
       <label>Vacunas:</label>
-      <select multiple onChange={(e) => handleMultiSelect(e, setVacunas)}>
+      <select
+        multiple
+        value={vacunas}
+        onChange={(e) => handleMultiSelect(e, setVacunas)}
+      >
         <option value="Rabia">Rabia</option>
         <option value="Parvovirus">Parvovirus</option>
         <option value="Moquillo">Moquillo</option>
@@ -119,9 +140,14 @@ function Formulario() {
         onChange={handleImageChange}
         ref={fileInputRef}
       />
-      <button type="submit">Agregar Mascota</button>
+
+      <div className="edit-img">
+        {imagen && <img src={imagen} alt="Imagen de la mascota" />}
+      </div>
+
+      <button type="submit">Actualizar Mascota</button>
     </form>
   );
 }
 
-export default Formulario;
+export default EditarMascota;

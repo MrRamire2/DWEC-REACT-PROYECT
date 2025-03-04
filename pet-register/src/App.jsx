@@ -2,8 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Inicio from './pages/inicio/Inicio';
 import Tema from './pages/tema/Tema';
+import EditarMascota from './pages/tema/EditarMascota';
 import Formulario from './pages/formulario/Formulario';
-import List from './components/List';
+import Busqueda from './pages/busqueda/Busqueda';
 import './App.css';
 
 function App() {
@@ -11,10 +12,11 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Inicio />} />
+      <Route path="/" element={<Inicio />} />
         <Route path="/tema/:id" element={<Tema />} />
+        <Route path="/editar/:id" element={<EditarMascota />} />
         <Route path="/nuevo" element={<Formulario />} />
-        {/* <Route path="/listado" element={<List />} /> */}
+        <Route path="/buscar" element={<Busqueda />} />
       </Routes>
     </Router>
   );

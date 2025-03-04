@@ -1,58 +1,82 @@
-section {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
+.tema-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
   background-color: #ffa01b;
-  height: 300px;
   width: 100%;
-  max-width: 550px;
-  margin: 5px;
+  max-width: 500px;
+  margin: 10px;
   padding: 20px;
   border-radius: 10px;
   border: solid 3px #ff7300;
 }
 
-section div:first-child{
+.imagen {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin-left: 20px;
-  flex-grow: 1;
-  height: 300px;
-  max-width: 300px;
-}
-
-section div:first-child h2{
-  margin: 0;
-}
-
-section div:first-child button{
-  background-color: #ff7300;
-  border: 3px solid #ffa01b;
-}
-
-section div:first-child button:hover{
-  background-color: #ffa01b;
-  border: 3px solid #ff7300;
-  box-sizing: border-box;
-}
-
-section div:first-child div h3{
-  display: inline-block;
-}
-
-section div:last-child{
-  height: 300px;
-  width: 300px;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 10px;
   border: solid 3px #ff7300;
-  box-sizing: border-box;
 }
 
-section div img{
+.imagen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.infomascotas {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.infomascotas h2 {
+  margin: 0;
+}
+
+.datos {
+  margin-top: 20px;
+}
+
+.datos h3,
+.datos p {
+  margin: 5px;
+}
+
+.botones {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+.botones button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff7300;
+  color: white;
+  border: 3px solid #ffa01b;
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+}
+
+.botones button:hover {
+  background-color: #ffa01b;
+  border: 3px solid #ff7300;
+  box-sizing: border-box;
 }

@@ -1,0 +1,19 @@
+.contenedor{
+  padding: 50px 0;
+}
+
+.mascotas-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.error{
+  text-align: center;
+  color: #ff7300;
+}
+
+.resultado{
+  text-align: center;
+  color: #383838;
+}

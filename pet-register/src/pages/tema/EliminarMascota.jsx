@@ -2,7 +2,7 @@ import { db } from "../../firebase/firebase";
 import { doc, deleteDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
-function EliminarMascota({ id }) {
+function EliminarMascota({ id, onDelete }) {
   const navigate = useNavigate();
 
   const handleDelete = async () => {
@@ -10,7 +10,13 @@ function EliminarMascota({ id }) {
       try {
         await deleteDoc(doc(db, "mascotas", id));
         alert("Mascota eliminada con éxito.");
+
+        if (onDelete) {
+          onDelete(id);
+        }
+
         navigate("/");
+
       } catch (error) {
         console.error("Error al eliminar la mascota: ", error);
         alert("Hubo un error al eliminar la mascota.");

@@ -9,7 +9,7 @@
 
 .list-container > h2{
     display: block;
-    width: 100dvw;
+    width: 100%;
     color: #ff7300;
     text-align: center;
   }

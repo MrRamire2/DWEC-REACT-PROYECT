@@ -26,13 +26,24 @@ Adición de estilos
 Adición de estilos
 Añadiendo datos al firebase
 
+01/03/2025 && 02/03/2025 && 03/03/2025:
+Edición de navbar
+Creación de aditarMascotas
+Edición de app
+Adición de estilos
+añadir detalles a las mascotas
+modificacion de list
+modificacion de Tema
+modificacion de EliminarMascotas
 
  -----------------------------------------------------------------
+
 Problemas encontrados y soluciones aplicadas:
 
+- Problema con la sincronización de los datos después de eliminar una mascota:
+Descripción: Tras eliminar una mascota, los cambios no se reflejaban de inmediato en la interfaz de usuario, y la lista no se actualizaba hasta recargar la página manualmente.
+Solución: Se implementó un estado en el componente para actualizar la lista de mascotas tras eliminar un documento de Firebase, lo que permitió que los datos se sincronizaran sin necesidad de recargar la página.
 
-
-
-
-------------------------------------------------------------------
-Mejoras o funcionalidades adicionales implementadas:
+- Problema con las versiones de las dependencias:
+Descripción: Hubo problemas de compatibilidad entre las versiones de react-router-dom y react, lo que causaba errores de navegación y otros fallos en los componentes.
+Solución: Se actualizaron las versiones de react, react-dom, react-router-dom y firebase con los comandos npm install react@18 react-dom@18 react-router-dom@7 firebase@latest para asegurar la compatibilidad entre las dependencias.
