@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Inicio from './pages/inicio/Inicio';
 import Tema from './pages/tema/Tema';
@@ -9,16 +9,17 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Navbar />
       <Routes>
-      <Route path="/" element={<Inicio />} />
-        <Route path="/tema/:id" element={<Tema />} />
-        <Route path="/editar/:id" element={<EditarMascota />} />
-        <Route path="/nuevo" element={<Formulario />} />
-        <Route path="/buscar" element={<Busqueda />} />
+        <Route path="/" element={<Inicio />} />
+          <Route path="/tema/:id" element={<Tema />} />
+          <Route path="/editar/:id" element={<EditarMascota />} />
+          <Route path="/nuevo" element={<Formulario />} />
+          <Route path="/buscar" element={<Busqueda />} />
+          <Route path="*" element={<Inicio />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

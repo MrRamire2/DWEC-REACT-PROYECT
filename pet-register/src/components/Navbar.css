@@ -30,18 +30,27 @@ nav form{
 
 nav input{
   height: 40px;
-  margin: 0 10px;
-  width: 270px;
+  margin: 0;
+  min-width: 100px;
+  width: 30dvw;
   padding: 0 10px;
   color: #fbf6f0;
+  border-start-start-radius: 5px;
+  border-end-start-radius: 5px;
 }
 
-nav button, nav input{
+nav button{
+  border-radius: 0;
+  border-start-end-radius: 5px;
+  border-end-end-radius: 5px;
+}
+
+nav input, nav button{
+  border: solid 1px #ffa01b;
   background-color: #ffa01b;
-  border: solid 2px #ff7300;
-  border-radius: 5px;
 }
 
 nav button:hover, nav input:hover{
-  border: solid 2px #fbf6f0;
+  box-sizing: content-box;
+  border: solid 1px #fbf6f0;
 }

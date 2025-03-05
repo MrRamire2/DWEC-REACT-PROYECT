@@ -98,7 +98,6 @@ function Formulario() {
 
       <label>Enfermedades:</label>
       <select multiple onChange={(e) => handleMultiSelect(e, setEnfermedades)}>
-        <option value="Ninguna">Ninguna</option>
         <option value="Alergias">Alergias</option>
         <option value="Problemas cardíacos">Problemas cardíacos</option>
         <option value="Artritis">Artritis</option>

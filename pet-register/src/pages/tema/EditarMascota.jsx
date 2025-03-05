@@ -81,27 +81,23 @@ function EditarMascota() {
         type="text"
         placeholder="Nombre"
         value={nombre}
-        onChange={(e) => setNombre(e.target.value)}
-      />
+        onChange={(e) => setNombre(e.target.value)}/>
       <input
         type="text"
         placeholder="Tipo de animal"
         value={tipo}
-        onChange={(e) => setTipo(e.target.value)}
-      />
+        onChange={(e) => setTipo(e.target.value)}/>
       <input
         type="text"
         placeholder="Raza"
         value={raza}
-        onChange={(e) => setRaza(e.target.value)}
-      />
+        onChange={(e) => setRaza(e.target.value)}/>
 
       <label>Personalidad:</label>
       <select
         multiple
         value={personalidad}
-        onChange={(e) => handleMultiSelect(e, setPersonalidad)}
-      >
+        onChange={(e) => handleMultiSelect(e, setPersonalidad)}>
         <option value="Juguetón">Juguetón</option>
         <option value="Tranquilo">Tranquilo</option>
         <option value="Cariñoso">Cariñoso</option>
@@ -113,9 +109,7 @@ function EditarMascota() {
       <select
         multiple
         value={enfermedades}
-        onChange={(e) => handleMultiSelect(e, setEnfermedades)}
-      >
-        <option value="Ninguna">Ninguna</option>
+        onChange={(e) => handleMultiSelect(e, setEnfermedades)}>
         <option value="Alergias">Alergias</option>
         <option value="Problemas cardíacos">Problemas cardíacos</option>
         <option value="Artritis">Artritis</option>

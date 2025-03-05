@@ -50,8 +50,7 @@
   margin-top: 20px;
 }
 
-.datos h3,
-.datos p {
+.datos h3, .datos p {
   margin: 5px;
 }
 
@@ -80,3 +79,5 @@
   border: 3px solid #ff7300;
   box-sizing: border-box;
 }
+
+
