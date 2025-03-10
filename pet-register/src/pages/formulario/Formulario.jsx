@@ -15,11 +15,13 @@ function Formulario() {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
+    // Crea un objeto FileReader
     const reader = new FileReader();
     reader.onloadend = () => {
       setImagen(reader.result);
     };
     if (file) {
+      // Convierte la imagen a base64
       reader.readAsDataURL(file);
     }
   };
